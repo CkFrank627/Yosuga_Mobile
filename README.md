@@ -6,10 +6,9 @@
 
 | 你想做什么 | 阅读位置 |
 | --- | --- |
-| 第一次下载，在自己的 iPhone 上运行 | **[Mac → iPhone 中文导出教程](docs/IOS-EXPORT.zh-CN.md)** |
-| 准备缺少的游戏数据 | [资源放置说明](docs/RESOURCES.zh-CN.md) |
-| 查看这个版本补齐了哪些文件、检查了什么 | [完整性与验证记录](docs/INTEGRITY.zh-CN.md) |
-| 了解两种着色模式 | [浅色／深色模式说明](reports/color-modes-2026-10-22.md) |
+| 第一步：准备缺少的游戏数据 | [资源放置说明](docs/RESOURCES.zh-CN.md) |
+| 第二步：下载，在自己的 iPhone 上运行 | **[Mac → iPhone 中文导出教程](docs/IOS-EXPORT.zh-CN.md)** |
+
 
 ## 版本功能
 
