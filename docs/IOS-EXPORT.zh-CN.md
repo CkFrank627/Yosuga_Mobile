@@ -1,13 +1,13 @@
 # Mac 导出并安装到 iPhone：中文教程
 
-适用于本仓库的 **YosugaMobile-5／2026-10-22 着色模式版**。本版把游戏数据一起导出进应用，安装后直接使用；**没有“导入资源包”按钮，也无需运行原生文件选择器脚本。**
+适用于本仓库的 **YosugaMobile-5／2026-10-22 着色模式版**。本版把游戏数据一起导出进应用，安装后直接使用；
 
 ## 1. 准备工具和工程
 
-1. 安装 Godot **4.7.2 标准版**，再在“编辑器 → 管理导出模板”安装 **同版本**模板。
+1. 安装 Godot **4.7.2 标准版** （或者至少4.2以上），再在“编辑器 → 管理导出模板”安装 **同版本**模板。
 2. 安装 Xcode，首次打开并完成组件安装、许可确认。在 Xcode → Settings → Locations 中选择已安装的 Command Line Tools。
 3. 在 GitHub 仓库选择 **Code → Download ZIP**，解压到 Mac。本地目录名称可以不同，下文统一称“工程根目录”。
-4. 按[资源说明](RESOURCES.zh-CN.md)准备 `godot/content/`。确认它直接包含 `story.json`，而不是多嵌套一层 `content/content/`。
+4. 确保[资源说明](RESOURCES.zh-CN.md)的资源准备完毕，可以看`godot/content/`确认它直接包含 `story.json`，而不是多嵌套一层 `content/content/`。
 
 如需检查资源，在终端输入 `cd `（末尾有空格），把工程根目录从 Finder 拖入终端，回车。再执行：
 
@@ -32,15 +32,12 @@ python3 tools/check_project.py --require-content
 
 | 选项 | 如何填写 |
 | --- | --- |
-| Application → App Store Team ID | 你自己的 Apple 团队 ID，通常为 10 位字母／数字；不是“Personal Team”这几个字 |
-| Application → Bundle Identifier | 首次安装填写独有标识，例如 `com.frank.yosugamobile` |
+| Application → App Store Team ID | 随便输入一个十位数，比如：1234567890 |
+| （它也许还会让你上传软件图标，随便上传一个就行）|
+| Application → Bundle Identifier | 首次安装填写独有标识，例如 `com.unknown.yosugamobile` |
 | Application → Export Project Only | 保持开启，只导出 Xcode 工程 |
 | Application → Min iOS Version | 保持 16.0，或根据实际部署需求提高 |
 | Short Version / Version | 展示版本／构建号；更新已安装版本时构建号递增 |
-
-**更新旧应用并保留存档：沿用旧 Bundle ID 和原签名团队，通过覆盖安装更新；先备份存档，不要先卸载。**不同 Bundle ID 会作为不同应用安装。
-
-如果不知道 Team ID：先在 Xcode → Settings → Accounts 登录 Apple 账号；可在开发者账户的会员详情查看 Team ID。Personal Team 的开发证书信息中也可找到团队标识。这里填的是标识字符串，Xcode 中选择 Team 则选择对应的团队名称。
 
 ## 4. 导出 Xcode 工程
 
@@ -54,14 +51,14 @@ python3 tools/check_project.py --require-content
 
 1. 点击左侧蓝色工程图标，在 **TARGETS** 下选择应用目标。
 2. 打开 **Signing & Capabilities**，勾选 **Automatically manage signing**。
-3. Team 选择自己的 **Personal Team** 或付费开发者团队。
+3. Team 选择自己的 **Personal Team** 。
 4. 若提示 Bundle Identifier 被占用，首次安装可改成自己的独有值；要覆盖已有应用时应先核对原标识和团队。
-5. 用数据线连接 iPhone，解锁手机，按提示选择“信任此电脑”。
+5. 用数据线连接 iPhone，解锁手机，按提示选择“信任此电脑” （或者不行的话，在启用手机的开发者模式并重启）。
 6. 在 Xcode 顶部选择你的 **iPhone 名称**，不要选择模拟器或只有“Any iOS Device”的归档目标。
 7. 点击 **▶ Run**，或按 **⌘R**，等待编译、签名和安装。
-8. 如果 iPhone 提示开启开发者模式，在“设置 → 隐私与安全性 → 开发者模式”开启并按提示重启。若提示不信任开发者，在“设置 → 通用 → VPN 与设备管理”信任对应开发者后再打开。
+8. 若提示不信任开发者，在“设置 → 通用 → VPN 与设备管理”信任对应开发者后再打开。
 
-Personal Team 可用于自己的设备测试。免费预置描述文件有效期为 7 天，到期后用原团队、原 Bundle ID 重新构建并覆盖安装；不要为了续签删除应用。Personal Team 不提供面向公众的免签安装。正式公开测试／商店分发需要加入 Apple Developer Program 并按相应流程审核。
+Personal Team 可用于自己的设备测试。免费预置描述文件有效期为 7 天，到期后用原团队、原 Bundle ID 重新构建并覆盖安装（也就是再执行一遍：5. 在 Xcode 签名并安装）
 
 ## 6. 手机上检查这些操作
 
