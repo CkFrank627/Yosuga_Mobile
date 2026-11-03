@@ -89,5 +89,3 @@ Personal Team 可用于自己的设备测试。免费预置描述文件有效期
 - [Godot 4.7：导出 iOS](https://docs.godotengine.org/en/4.7/tutorials/export/exporting_for_ios.html)
 - [Apple：开发者账号与 Personal Team](https://developer.apple.com/help/account/basics/about-your-developer-account/)
 - [Apple：TestFlight](https://developer.apple.com/testflight/)
-
-本次整理在 Windows 完成，不能替代 Mac/Xcode 编译。本教程针对本版本的内置资源流程；后续资源分离版本的桥接步骤不适用于这里。
