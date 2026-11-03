@@ -1,0 +1,24 @@
+# 游戏数据在本机准备
+/godot/content/
+# Godot 生成文件
+.godot/
+*.import
+# 构建、归档与本机环境
+/build/
+*.zip
+*.ipa
+*.pck
+*.xcarchive/
+*.xcodeproj/
+*.xcworkspace/
+xcuserdata/
+*.xcuserstate
+export_credentials.cfg
+*.p12
+*.mobileprovision
+.env
+.env.*
+__pycache__/
+*.pyc
+.DS_Store
+Thumbs.db

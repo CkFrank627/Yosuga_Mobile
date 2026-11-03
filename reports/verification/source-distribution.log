@@ -1,0 +1,4 @@
+SOURCE_DISTRIBUTION: PASS
+Extracted source ZIP validated without game data.
+Missing-data check correctly explains resource requirement.
+Chinese UTF-8 documents and all README/docs relative links verified.
