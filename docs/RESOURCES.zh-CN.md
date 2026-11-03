@@ -44,3 +44,6 @@ python3 tools/check_project.py --require-content
 `.gitignore` 排除了 `godot/content/`、导出产物、Godot 缓存和本机签名文件。请保留这一规则。资源由你在本机准备；不要误把含原作素材的完整运行包当作源码提交。
 
 原作素材的授权与播放器的 GPL 许可证分别处理；本仓库不提供原游戏资源下载。
+**
+下一步如何操作，请看：IOS-EXPORT.zh-CN.md
+**
